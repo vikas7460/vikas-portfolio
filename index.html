@@ -1,157 +1,291 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vikas Patel Portfolio</title>
-    <!-- Link to external stylesheet -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vikas Patel • Portfolio</title>
+  <!-- Optional: uncomment to use the Inter font
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Navigation bar -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="tasks.html">Tasks</a></li>
-            <li><a href="#contact">Contact</a></li>
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="nav">
+      <div class="nav-inner container">
+        <a class="brand" href="#home" aria-label="Homepage">
+          <span class="brand-mark"></span>
+          <span class="brand-text">Vikas Patel</span>
+        </a>
+
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle Menu">☰</button>
+
+        <ul id="nav-menu" class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="task.html">Tasks</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="divider" aria-hidden="true"></li>
+          <li><a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">View Resume</a></li>
+          <li><a class="btn" href="resume.pdf" download>Download</a></li>
+          <li><button id="theme-toggle" class="btn icon" title="Toggle theme" aria-label="Toggle theme">🌙</button></li>
         </ul>
+      </div>
     </nav>
+  </header>
 
-    <!-- Hero section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Vikas Patel</h1>
-            <p>Software Engineer &amp; Android Developer</p>
-            <a href="#projects"><button class="btn">Explore My Work</button></a>
+  <!-- HERO -->
+  <section id="home" class="hero" role="banner" aria-label="Hero">
+    <div class="hero-backdrop">
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="orb orb-c"></div>
+      <div class="scanline"></div>
+    </div>
+
+    <div class="hero-content container">
+      <h1 class="display">Software Engineer & Android Developer</h1>
+      <p class="lede">
+        I build reliable Android apps, scalable Spring Boot backends, and end-to-end products with clean architecture & excellent UX.
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#projects">Explore My Work</a>
+        <a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+
+      <ul class="quick-facts">
+        <li>Bengaluru, India</li>
+        <li><a href="mailto:vikaspatel6192@gmail.com">vikaspatel6192@gmail.com</a></li>
+        <li><a href="tel:+918890546192">+91 8890546192</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section container">
+    <header class="section-head">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-sub">Focused on performance, reliability, and delightful user experiences.</p>
+    </header>
+
+    <div class="card card-ambient">
+      <p>
+        Hello! I’m Vikas Patel, a software engineer with strong experience in Android (Java), Spring Boot,
+        and full-stack development. I enjoy solving tough problems, designing clean APIs, and shipping features that matter.
+        I care deeply about code quality, observability, and usability.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section container">
+    <header class="section-head">
+      <h2 class="section-title">Technical Skills</h2>
+    </header>
+
+    <div class="grid two">
+      <div class="card">
+        <h3 class="eyebrow">Languages & Databases</h3>
+        <ul class="chips">
+          <li>C/C++</li><li>Java</li><li>Python (Basic)</li><li>SQL (Basic)</li><li>MySQL</li><li>MongoDB</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="eyebrow">Technologies & Tools</h3>
+        <ul class="chips">
+          <li>Android Studio</li><li>Android SDK</li><li>Spring Boot</li><li>Docker</li><li>RabbitMQ</li>
+          <li>API Gateway</li><li>Eureka Server</li><li>Angular</li><li>PyCharm</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE (TIMELINE) -->
+  <section id="experience" class="section container">
+    <header class="section-head">
+      <h2 class="section-title">Experience</h2>
+    </header>
+
+    <ol class="timeline">
+      <li class="timeline-item">
+        <div class="timeline-pin"></div>
+        <div class="timeline-card card">
+          <div class="card-head">
+            <h3>Software Engineer — CGI, Bengaluru</h3>
+            <span class="muted">Jul 2023 – Present</span>
+          </div>
+          <p>
+            Built and maintained a high-performance e-commerce backend (Spring Boot + Java). Designed responsive Angular features
+            that improved UX and conversion. Proactively handled production issues via Jira and observability dashboards.
+          </p>
+          <div class="meta-tags">
+            <span>Spring Boot</span><span>Docker</span><span>RabbitMQ</span><span>API Gateway</span><span>Eureka</span><span>Angular</span>
+          </div>
         </div>
-    </section>
+      </li>
 
-    <!-- About section -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-container">
-            <p>Hello! I’m Vikas Patel, a passionate software engineer with experience in building robust backend systems and developing Android applications. I love solving problems and learning new technologies. With a background in computer science and hands-on experience in industry projects, I aim to create impactful solutions and continuously improve my skills.</p>
+      <li class="timeline-item">
+        <div class="timeline-pin"></div>
+        <div class="timeline-card card">
+          <div class="card-head">
+            <h3>Android Developer — Samsung R&D, Noida</h3>
+            <span class="muted">Jan 2023 – Jun 2023</span>
+          </div>
+          <p>
+            Delivered two Android apps: a high-throughput logging application for device sensors and a GPS tracker with real-time
+            mapping. Used SensorManager, Android Services, and performance profiling to ensure reliability and battery efficiency.
+          </p>
+          <div class="meta-tags">
+            <span>Android</span><span>Java</span><span>SensorManager</span><span>Services</span>
+          </div>
         </div>
-    </section>
+      </li>
+    </ol>
+  </section>
 
-    <!-- Skills section -->
-    <section id="skills">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-container">
-            <h3>Languages &amp; Databases</h3>
-            <ul class="skills-list">
-                <li>C/C++</li>
-                <li>Java</li>
-                <li>Python (Basic)</li>
-                <li>SQL (Basic)</li>
-                <li>MySQL</li>
-                <li>MongoDB</li>
-            </ul>
-            <h3>Technologies &amp; Tools</h3>
-            <ul class="skills-list">
-                <li>Android Studio</li>
-                <li>Android SDK</li>
-                <li>Spring Boot</li>
-                <li>Docker</li>
-                <li>Rabbit MQ</li>
-                <li>API Gateway</li>
-                <li>Eureka Server</li>
-                <li>Angular</li>
-                <li>PyCharm</li>
-            </ul>
+  <!-- EDUCATION -->
+  <section id="education" class="section container">
+    <header class="section-head">
+      <h2 class="section-title">Education</h2>
+    </header>
+
+    <div class="card">
+      <div class="card-head">
+        <h3>B.Tech, CSE — IIIT KOTA</h3>
+        <span class="muted">Aug 2019 – Jun 2023</span>
+      </div>
+      <p>CGPA: 7.74/10</p>
+      <p class="muted">
+        Relevant Coursework: OOP, DBMS, DSA, OS, Computer Networks, Machine Learning, Advanced DSA
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section container">
+    <header class="section-head">
+      <h2 class="section-title">Highlighted Projects</h2>
+      <p class="section-sub">Impact-focused work with clear problem → approach → outcome.</p>
+    </header>
+
+    <div class="grid three">
+      <article class="project card card-hover">
+        <div class="ring"></div>
+        <h3>Logging Application (2023)</h3>
+        <p>
+          Wi-Fi P2P Manager streams client device sensor data to a host for real-time plotting.
+          Background Service ensures continuous operation.
+        </p>
+        <ul class="bullets">
+          <li>Real-time charts for accelerometer/gyroscope</li>
+          <li>Zero-drop background streaming</li>
+        </ul>
+        <div class="meta-tags">
+          <span>Java</span><span>Android</span><span>Service</span>
         </div>
-    </section>
+      </article>
 
-    <!-- Experience section -->
-    <section id="experience">
-        <h2 class="section-title">Work Experience</h2>
-        <div class="experience-container">
-            <div class="experience-item">
-                <h3>Software Engineer – CGI, Bengaluru, India</h3>
-                <span>July 2023 – Present</span>
-                <p>Developed and maintained a robust e-commerce website using Spring Boot and Java for backend services, ensuring high performance and scalability. Implemented responsive user interfaces with Angular, enhancing user experience and frontend functionality. Actively resolved defects and managed issues using Jira.</p>
-                <p class="project-technologies"><strong>Technologies:</strong> Spring Boot, Docker, RabbitMQ, API Gateway, Eureka Server, Angular.</p>
-            </div>
-            <div class="experience-item">
-                <h3>Android Developer – Samsung R&amp;D Institute, Noida, India</h3>
-                <span>Jan 2023 – June 2023</span>
-                <p>Developed two notable projects: a logging application that efficiently loads and stores device sensor data, and a GPS tracker app that provides real-time location tracking and mapping features. Worked extensively with phone device sensors using the SensorManager API to fetch and process sensor data. Implemented these applications in Android Studio with a focus on performance and reliability.</p>
-                <p class="project-technologies"><strong>Technologies:</strong> Java, Android Services, Android Studio.</p>
-            </div>
+      <article class="project card card-hover">
+        <div class="ring"></div>
+        <h3>e-MartHub (2023)</h3>
+        <p>
+          Secure rating flow with authentication, orchestrated via API Gateway + Eureka. Containerized services for smooth CI.
+        </p>
+        <ul class="bullets">
+          <li>Safer user ratings</li>
+          <li>Production-ready micro-services</li>
+        </ul>
+        <div class="meta-tags">
+          <span>Spring Boot</span><span>Angular</span><span>RabbitMQ</span><span>Docker</span>
         </div>
-    </section>
+      </article>
 
-    <!-- Education section -->
-    <section id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="education-container">
-            <div class="education-item">
-                <h3>B.Tech in Computer Science and Engineering – IIIT KOTA</h3>
-                <span>Aug 2019 – June 2023</span>
-                <p>CGPA: 7.74/10</p>
-                <p><strong>Relevant Coursework:</strong> Object Oriented Programming, Database Management System, Data Structures and Algorithms, Operating Systems, Computer Networks, Machine Learning, Advanced Data Structures and Algorithms.</p>
-            </div>
+      <article class="project card card-hover">
+        <div class="ring"></div>
+        <h3>GPS Tracker App (2023)</h3>
+        <p>
+          FusedLocationProviderClient + offline persistence for last-known locations with reliable map rendering.
+        </p>
+        <ul class="bullets">
+          <li>Accurate, battery-aware tracking</li>
+          <li>Resilient location storage</li>
+        </ul>
+        <div class="meta-tags">
+          <span>Java</span><span>GPS</span><span>Network Provider</span>
         </div>
-    </section>
+      </article>
+    </div>
+  </section>
 
-    <!-- Projects section -->
-    <section id="projects">
-        <h2 class="section-title">Project Work</h2>
-        <div class="projects-container">
-            <div class="project-item">
-                <h3>Logging Application (2023)</h3>
-                <p>Developed an Android Studio project using Wi-Fi P2P Manager to transmit client device sensor data to a host device for real-time plotting, with a background Service implementation for continuous operation.</p>
-                <p class="project-technologies"><strong>Technologies:</strong> Java, Android Studio, Sensors, Android Service.</p>
-            </div>
-            <div class="project-item">
-                <h3>e-MartHub (2023)</h3>
-                <p>Enhanced user rating experiences in the e-MartHub e-commerce project by implementing secure user authentication prior to rating submissions. Developed and integrated this feature using Spring Boot, Java, and Angular. Utilized RabbitMQ, API Gateway, Eureka Server, Postman, and Docker for seamless functionality and testing.</p>
-                <p class="project-technologies"><strong>Technologies:</strong> Spring Boot, Java, Angular, RabbitMQ, API Gateway, Eureka Server, Postman, Docker.</p>
-            </div>
-            <div class="project-item">
-                <h3>GPS Tracker App (2023)</h3>
-                <p>Developed a GPS Tracker App using Android Studio, leveraging FusedLocationProviderClient to fetch and display user locations (latitude, longitude, altitude) on a map. Implemented functionality to save the last known locations for future reference.</p>
-                <p class="project-technologies"><strong>Technologies:</strong> Java, GPS Provider, Network Provider.</p>
-            </div>
-        </div>
-    </section>
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="section container">
+    <header class="section-head">
+      <h2 class="section-title">Achievements & Certifications</h2>
+    </header>
 
-    <!-- Achievements section -->
-    <section id="achievements">
-        <h2 class="section-title">Achievements &amp; Certifications</h2>
-        <div class="achievements-container">
-            <ul class="achievements-list">
-                <li>Solved 570+ problems on LeetCode.</li>
-                <li>Secured first position in 12th standard with 87.8%.</li>
-                <li>Completed Machine Learning Specialization on Udemy.</li>
-                <li>Achieved highest rating of 1856+ on CodeChef.</li>
-            </ul>
-        </div>
-    </section>
+    <div class="card">
+      <ul class="list">
+        <li>Solved 570+ problems on LeetCode.</li>
+        <li>First position in 12th standard with 87.8%.</li>
+        <li>Completed Machine Learning Specialization (Udemy).</li>
+        <li>CodeChef highest rating 1856+.</li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Contact section -->
-    <section id="contact">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-container">
-            <p>If you’d like to discuss an opportunity to collaborate or just want to say hi, feel free to reach out!</p>
-            <ul class="contact-list">
-                <li><a href="mailto:vikaspatel6192@gmail.com"><img src="icons/envelope.svg" alt="Email Icon">vikaspatel6192@gmail.com</a></li>
-                <li><a href="tel:+918890546192"><img src="icons/phone.svg" alt="Phone Icon">+91 8890546192</a></li>
-                <li><a href="https://github.com/vikas7460" target="_blank"><img src="icons/github.svg" alt="GitHub Icon">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/vikas-patel-812181191/" target="_blank"><img src="icons/linkedin-in.svg" alt="LinkedIn Icon">LinkedIn</a></li>
-            </ul>
-        </div>
-    </section>
+  <!-- CONTACT -->
+  <section id="contact" class="section container">
+    <header class="section-head">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">Let’s build something great together.</p>
+    </header>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 Vikas Patel. All Rights Reserved.
-    </footer>
+    <div class="card">
+      <ul class="contact">
+        <li><a href="mailto:vikaspatel6192@gmail.com"><img src="icons/envelope.svg" alt="Email">vikaspatel6192@gmail.com</a></li>
+        <li><a href="tel:+918890546192"><img src="icons/phone.svg" alt="Phone">+91 8890546192</a></li>
+        <li><a href="https://github.com/vikas7460" target="_blank" rel="noopener"><img src="icons/github.svg" alt="GitHub">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/vikas-patel-812181191/" target="_blank" rel="noopener"><img src="icons/linkedin-in.svg" alt="LinkedIn">LinkedIn</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">&copy; 2025 Vikas Patel. All rights reserved.</div>
+  </footer>
+
+  <!-- THEME + NAV -->
+  <script>
+    (function(){
+      const html = document.documentElement;
+      const THEME_KEY = 'vp_theme';
+      const saved = localStorage.getItem(THEME_KEY);
+      if(saved){ html.setAttribute('data-theme', saved); }
+
+      const btn = document.getElementById('theme-toggle');
+      const setIcon = () => {
+        const dark = html.getAttribute('data-theme') === 'dark';
+        btn.textContent = dark ? '🌙' : '☀️';
+        btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      };
+      btn.addEventListener('click', () => {
+        const next = (html.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem(THEME_KEY, next);
+        setIcon();
+      });
+      setIcon();
+
+      const toggle = document.getElementById('nav-toggle');
+      const menu = document.getElementById('nav-menu');
+      toggle.addEventListener('click', ()=> menu.classList.toggle('open'));
+    })();
+  </script>
 </body>
 </html>

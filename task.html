@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>My Tasks — Vikas Patel</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="nav">
+      <div class="nav-inner container">
+        <a class="brand" href="index.html#home">
+          <span class="brand-mark"></span><span class="brand-text">Vikas Patel</span>
+        </a>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle Menu">☰</button>
+        <ul id="nav-menu" class="nav-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#education">Education</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#achievements">Achievements</a></li>
+          <li><a href="task.html">Tasks</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li class="divider" aria-hidden="true"></li>
+          <li><a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">View Resume</a></li>
+          <li><a class="btn" href="resume.pdf" download>Download</a></li>
+          <li><button id="theme-toggle" class="btn icon" title="Toggle theme" aria-label="Toggle theme">🌙</button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- TASKS -->
+  <section id="tasks" class="section container">
+    <header class="section-head">
+      <h2 class="section-title">My Tasks</h2>
+      <p class="section-sub">Track everything — from quick fixes to milestone deliveries.</p>
+    </header>
+
+    <div class="card">
+      <ul class="list">
+        <li><strong>Implement user authentication in e-MartHub</strong><br/>Integrated secure user authentication for rating submissions using Spring Boot + JWT.</li>
+        <li><strong>Optimize sensor data logging app</strong><br/>Improved sensor data reading & storage throughput; reduced jitter.</li>
+        <li><strong>Refactor GPS tracker for efficiency</strong><br/>Cut battery usage by refactoring location update cadence and caching.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">&copy; 2025 Vikas Patel. All rights reserved.</div>
+  </footer>
+
+  <!-- THEME + NAV -->
+  <script>
+    (function(){
+      const html = document.documentElement;
+      const THEME_KEY = 'vp_theme';
+      const saved = localStorage.getItem(THEME_KEY);
+      if(saved){ html.setAttribute('data-theme', saved); }
+
+      const btn = document.getElementById('theme-toggle');
+      const setIcon = () => {
+        const dark = html.getAttribute('data-theme') === 'dark';
+        btn.textContent = dark ? '🌙' : '☀️';
+        btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      };
+      btn.addEventListener('click', () => {
+        const next = (html.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem(THEME_KEY, next);
+        setIcon();
+      });
+      setIcon();
+
+      const toggle = document.getElementById('nav-toggle');
+      const menu = document.getElementById('nav-menu');
+      toggle.addEventListener('click', ()=> menu.classList.toggle('open'));
+    })();
+  </script>
+</body>
+</html>
